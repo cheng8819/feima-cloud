@@ -1,0 +1,21 @@
+server:
+  port: 6111
+spring:
+  application:
+    name: feima-monitor
+  zipkin:
+    base-url: http://localhost:6101
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: ["health","info"]
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6603/eureka/

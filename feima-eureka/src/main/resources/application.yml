@@ -1,0 +1,18 @@
+server:
+  port: 6603
+spring:
+  application:
+    name: feima-eureka
+eureka:
+  instance:
+    hostname: ${EUREKA_DOMAIN:localhost}
+    prefer-ip-address: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:6603/eureka/
+    heartbeat-executor-thread-pool-size: 5
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 60000
